@@ -13,6 +13,7 @@ import { ErrorHandlerService } from './error-handler.service';
 })
 export class BudgetService {
   private url = 'http://localhost:3000/budget';
+  private endpoint = 'http://localhost:3000/budget/getBudget';
 
   httpOptions: { headers: HttpHeaders } = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -30,6 +31,16 @@ export class BudgetService {
         catchError(this.errorHandlerService.handleError<UserBudget[]>('fetchBudget', []))
       );
   }
+  fetchBudgetUser(userId) {
+    console.log("myid",userId);
+    return this.http
+      .get<UserBudget[]>(`${this.endpoint}/${userId}`, { responseType: 'json' })
+      .pipe(
+        catchError(this.errorHandlerService.handleError<UserBudget[]>('fetchBudgetUser', []))
+      );
+
+  }
+
 
   addBudgets(
     formData: Partial<UserBudget>,

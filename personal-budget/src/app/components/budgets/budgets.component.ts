@@ -15,7 +15,7 @@ import { User } from 'src/app/models/User';
 })
 export class BudgetsComponent implements OnInit {
   budgets$: Observable<UserBudget[]>;
-  userId: Pick<User, 'id'>;
+  userId: any;
 
   constructor(
     private budgetService: BudgetService,
@@ -23,13 +23,17 @@ export class BudgetsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.budgets$ = this.fetchBudget();
     this.userId = this.authService.userId;
+    this.budgets$ = this.fetchBudget();
+
+    console.log(this.userId);
   }
 
   fetchBudget(): Observable<UserBudget[]> {
-    return this.budgetService.fetchBudget();
+    console.log("budget c",this.userId);
+    return this.budgetService.fetchBudgetUser(this.userId);
   }
+
 
   addBudgets(): void {
     this.budgets$ = this.fetchBudget();
