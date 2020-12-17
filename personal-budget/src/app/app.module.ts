@@ -16,12 +16,15 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 
 import { NavigationComponent } from "./components/navigation/navigation.component";
 import { SignupComponent } from "./components/signup/signup.component";
+import { FooterComponent } from "./components/footer/footer.component"
 import { LoginComponent } from "./components/login/login.component";
 import { HomeComponent } from "./components/home/home.component";
 import { BudgetsComponent } from "./components/budgets/budgets.component";
 import { CreateBudgetComponent } from "./components/add-budget/add-budget.component";
 
 import { AuthInterceptorService } from "./services/auth-interceptor.service";
+import { HeroComponent } from './components/hero/hero.component';
+
 
 @NgModule({
   declarations: [
@@ -32,6 +35,8 @@ import { AuthInterceptorService } from "./services/auth-interceptor.service";
     HomeComponent,
     BudgetsComponent,
     CreateBudgetComponent,
+    FooterComponent,
+    HeroComponent
   ],
   imports: [
     BrowserModule,

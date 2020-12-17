@@ -2,7 +2,7 @@ export interface UserBudget {
   id: number;
   userId: number;
   title: string;
-  value: string;
+  value: number;
   tags: string;
   month: string;
 

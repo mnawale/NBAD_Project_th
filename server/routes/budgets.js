@@ -18,7 +18,7 @@ router.post(
     auth,
     body('userId').trim().not().isEmpty(),
     body('title').trim().isLength({ min: 5 }).not().isEmpty(),
-    body('value').trim().isLength({ min: 2 }).not().isEmpty(),
+   // body('value').trim().isLength({ min: 2 }).not().isEmpty(),
     body('month').trim().isLength({ min: 2 }).not().isEmpty(),
     body('tags').trim().isLength({ min: 2 }).not().isEmpty(),
   ],
