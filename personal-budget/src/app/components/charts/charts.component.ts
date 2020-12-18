@@ -32,8 +32,7 @@ public dataSource = {
     labels: []
   };
   userId: any;
-  canvas : any = document.getElementById("myChart");
-ctx = this.canvas.getContext("2d");
+  
   //budgetData: UserBudget[];
 
 

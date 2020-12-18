@@ -7,10 +7,21 @@
     <mat-icon (click)="delete(budget.id)" color="warn">delete</mat-icon>
   </button>
   <div class="budget-title">
-    {{ budget.title }}
+
+  {{ budget.title }}
   </div>
-  <div class="budget-title">
+  <div class="budget-value">
     {{ budget.budget }}
+  </div>
+
+  <div class="budget-value">
+    {{ budget.month }}
+  </div>
+  <div class="budget-value">
+    {{ budget.tags }}
+  </div>
+  <div class="budget-value">
+    {{ budget.amount }}
   </div>
   <div class="budget-meta">
     {{ budget.created }}

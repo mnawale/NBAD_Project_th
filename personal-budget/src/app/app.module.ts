@@ -27,6 +27,7 @@ import { HeroComponent } from './components/hero/hero.component';
 import { ChartsComponent } from './components/charts/charts.component';
 import { BargraphComponent } from './components/bargraph/bargraph.component';
 import { ChartmenuComponent } from './components/chartmenu/chartmenu.component';
+import { UpdateamountComponent } from './components/updateamount/updateamount.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { ChartmenuComponent } from './components/chartmenu/chartmenu.component';
     ChartsComponent,
     BargraphComponent,
     ChartmenuComponent,
+    UpdateamountComponent,
 
   ],
   imports: [

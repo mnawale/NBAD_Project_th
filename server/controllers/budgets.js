@@ -58,6 +58,17 @@ exports.budget= async (req, res, next) => {
     next(err);
   }
 };
+exports.putBudget = async (req, res, next) => {
+  try {
+    const putResponse = await Budget.update(req.params.id, req.params.amount);
+    res.status(200).json(putResponse);
+  } catch (err) {
+    if (!err.statusCode) {
+      err.statusCode = 500;
+    }
+    next(err);
+  }
+};
 
 exports.deleteBudget = async (req, res, next) => {
   try {

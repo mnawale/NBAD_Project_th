@@ -1,12 +1,14 @@
 const db = require('../util/database');
 
 module.exports = class Budget {
-  constructor(userId, title, value, month,tags) {
+  constructor(id,userId, title, value, month,tags,amount) {
+    this.id=id;
     this.userId = userId;
     this.title = title;
     this.value = value;
     this.month = month;
     this.tags = tags;
+    this.amount = amount;
   }
 
   static fetchAll() {
@@ -17,6 +19,11 @@ module.exports = class Budget {
     return db.execute('SELECT * FROM budget WHERE user_id = ?',[uid]);
               
   }
+  static update(id,amount)  {
+    return db.execute(
+      'UPDATE  budget SET amount= ? WHERE id= ?',[amount,id]);
+  }
+  
   
   static save(budget) {
     return db.execute(

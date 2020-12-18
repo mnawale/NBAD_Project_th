@@ -5,5 +5,6 @@ export interface UserBudget {
   value: number;
   tags: string;
   month: string;
+  amount:number;
 
 }
