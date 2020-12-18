@@ -24,6 +24,7 @@ import { CreateBudgetComponent } from "./components/add-budget/add-budget.compon
 
 import { AuthInterceptorService } from "./services/auth-interceptor.service";
 import { HeroComponent } from './components/hero/hero.component';
+import { ChartsComponent } from './components/charts/charts.component';
 
 
 @NgModule({
@@ -36,7 +37,9 @@ import { HeroComponent } from './components/hero/hero.component';
     BudgetsComponent,
     CreateBudgetComponent,
     FooterComponent,
-    HeroComponent
+    HeroComponent,
+    ChartsComponent,
+
   ],
   imports: [
     BrowserModule,

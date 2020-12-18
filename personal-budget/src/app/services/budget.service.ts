@@ -1,3 +1,4 @@
+import {map} from 'rxjs/internal/operators';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -40,6 +41,13 @@ export class BudgetService {
       );
 
   }
+
+  getChartData(userId){
+    //console.log("chart id",userId);
+      return this.http.get(`${this.endpoint}/${userId}`,{ responseType: 'json' })
+      
+  }
+
 
 
   addBudgets(

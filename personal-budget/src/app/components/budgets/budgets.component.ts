@@ -26,7 +26,8 @@ export class BudgetsComponent implements OnInit {
     this.userId = this.authService.userId;
     this.budgets$ = this.fetchBudget();
 
-    console.log(this.userId);
+    console.log("budget_show",this.userId);
+    console.log("details",this.budgets$);
   }
 
   fetchBudget(): Observable<UserBudget[]> {
