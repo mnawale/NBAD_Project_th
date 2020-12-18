@@ -1,0 +1,49 @@
+
+<nav>
+  <ul>
+    <span>
+
+    <li>
+    <a
+      *ngIf="isAuthenticated"
+      routerLinkActive="active-link"
+      routerLink="/PieChart"
+    >
+     Pie Chart
+    </a>
+    </li>
+    </span>
+    <span>
+
+    <li class="left">
+    <a
+      *ngIf="isAuthenticated"
+      routerLinkActive="active-link"
+      routerLink="/budgets"
+    >
+      Settings
+    </a>
+    </li>
+    <li>
+    <a
+
+      *ngIf="!isAuthenticated"
+      routerLinkActive="active-link"
+      routerLink="/PieChart"
+    >
+      Pie Chart
+    </a>
+      </li>
+
+    <li>
+    <a
+      *ngIf="!isAuthenticated"
+      routerLinkActive="active-link"
+      routerLink="/signup"
+    >
+      <span>Register</span>
+    </a>
+    </li>
+    </span>
+  </ul>
+</nav>

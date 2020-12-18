@@ -1,4 +1,6 @@
+<app-chartmenu></app-chartmenu>
 <app-add-budget (create)="addBudgets()"></app-add-budget>
+
 
 <mat-card *ngFor="let budget of budgets$ | async">
   <button *ngIf="budget.user === userId" mat-icon-button>

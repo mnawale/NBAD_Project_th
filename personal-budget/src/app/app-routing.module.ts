@@ -7,11 +7,13 @@ import { HomeComponent } from "./components/home/home.component";
 import { BudgetsComponent } from "./components/budgets/budgets.component";
 import { LoginComponent } from "./components/login/login.component";
 import { SignupComponent } from "./components/signup/signup.component";
+import { ChartsComponent } from './components/charts/charts.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "budgets", component: BudgetsComponent, canActivate: [AuthGuard] },
   { path: "login", component: LoginComponent },
+  { path: "PieChart", component: ChartsComponent },
   { path: "signup", component: SignupComponent },
   { path: "**", redirectTo: "" },
 ];
