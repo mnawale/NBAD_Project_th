@@ -31,13 +31,13 @@ export class BargraphComponent implements OnInit {
           labels:title,
           datasets:[
             {data:budget,
-            borderColor: '#ff3364',
+            borderColor: '#0099ff',
             fill:false
             },
 
             {
               data:amount,
-            borderColor: '#fd3334',
+            borderColor: '#339933',
             fill:false
             }
           ]
