@@ -12,18 +12,28 @@
      Pie Chart
     </a>
     </li>
-    </span>
-    <span>
-
-    <li class="left">
+    <li>
     <a
       *ngIf="isAuthenticated"
       routerLinkActive="active-link"
-      routerLink="/budgets"
+      routerLink="/barchart"
     >
-      Settings
+     Bar Graph
     </a>
     </li>
+    <li>
+    <a
+      *ngIf="isAuthenticated"
+      routerLinkActive="active-link"
+      routerLink="/linegraph"
+    >
+     Line Chart
+    </a>
+    </li>
+    </span>
+    <span>
+
+
     <li>
     <a
 
@@ -34,14 +44,15 @@
       Pie Chart
     </a>
       </li>
+      
 
     <li>
     <a
       *ngIf="!isAuthenticated"
       routerLinkActive="active-link"
-      routerLink="/signup"
+      routerLink="/linegraph"
     >
-      <span>Register</span>
+      <span>Line Graph</span>
     </a>
     </li>
     </span>

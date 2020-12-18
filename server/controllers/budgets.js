@@ -38,6 +38,7 @@ exports.budget= async (req, res, next) => {
   const value = req.body.value;
   const month =req.body.month;
   const tags = req.body.tags;
+  const amount = req.body.amount;
 
 
   try {
@@ -47,6 +48,7 @@ exports.budget= async (req, res, next) => {
       value: value,
       month:month,
       tags:tags,
+      amount:amount,
       
     };
     const result = await Budget.save(budget);

@@ -8,6 +8,10 @@ import { BudgetsComponent } from "./components/budgets/budgets.component";
 import { LoginComponent } from "./components/login/login.component";
 import { SignupComponent } from "./components/signup/signup.component";
 import { ChartsComponent } from './components/charts/charts.component';
+import { BargraphComponent } from './components/bargraph/bargraph.component';
+import { BarchartComponent } from './components/barchart/barchart.component';
+import { CreateBudgetComponent } from './components/add-budget/add-budget.component';
+
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -15,6 +19,9 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "PieChart", component: ChartsComponent },
   { path: "signup", component: SignupComponent },
+  { path: "linegraph", component: BargraphComponent },
+  { path: "barchart", component: BarchartComponent },
+  { path: "createbudget",component:CreateBudgetComponent},
   { path: "**", redirectTo: "" },
 ];
 

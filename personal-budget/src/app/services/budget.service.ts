@@ -45,7 +45,7 @@ export class BudgetService {
   getChartData(userId){
     //console.log("chart id",userId);
       return this.http.get(`${this.endpoint}/${userId}`,{ responseType: 'json' })
-      
+
   }
 
 
@@ -58,7 +58,7 @@ export class BudgetService {
       .post<UserBudget>(
         this.url,
         { userId, title: formData.title, value: formData.value,
-          month: formData.month, tags: formData.tags },
+          month: formData.month, tags: formData.tags,amount: formData.amount },
         this.httpOptions
       )
       .pipe(

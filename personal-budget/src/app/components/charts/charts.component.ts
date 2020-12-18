@@ -11,29 +11,10 @@ import { UserBudget } from 'src/app/models/User_budget';
 })
 
 export class ChartsComponent implements OnInit {
-public dataSource = {
-    datasets: [
-        {
-            data:[],
-            backgroundColor: [
-                '#ff3364',
-                '#808080',
-                '#acff33',
-                '#fd6b19',
-                '#859b45',
-                '#9b4593',
-                '#4f459b',
-                '#459b7e',
-                '#410e12'
-            ],
-        }
-    ],
-
-    labels: []
-  };
+  chart: any;
   userId: any;
-  
-  //budgetData: UserBudget[];
+
+
 
 
   constructor(private budgetService: BudgetService,
@@ -41,29 +22,31 @@ public dataSource = {
 
    ngOnInit(): void {
      this.userId = this.authService.userId;
-  this.budgetService.getChartData(this.userId)
-    .subscribe((res:any) => {
-      for (var i=0;i <res.length; i++) {
-      this.dataSource.datasets[0].data[i]= res[i].budget;
-      this.dataSource.labels[i]= res[i].title;
+    this.budgetService.getChartData(this.userId)
+    .subscribe((res:any) =>{
+      let title= res.map(res=>res.title);
+      let budget= res.map(res=>res.budget);
+      let amount= res.map(res=>res.amount);
+      console.log("bargraph",title);
+      console.log("bargraph1",budget);
+      console.log("bargraph2",amount);
+      this.chart = new Chart('canvas',{
+        type:'pie',
+        data: {
+          labels:title,
+          datasets:[
+            {data:budget,
+            backgroundColor: ['#ff3364','#808080','#acff33','#fd6b19','#859b45',
+                '#9b4593','#4f459b','#459b7e', '#410e12'],
+          
+            },
+          ]
+        },
 
-    }
-    console.log("budget array",this.dataSource);
-     this.createChart();
-      //console.log("budget object",budgetValue);
-
-});
+      })
+    })
 
 }
 
-createChart() {
-  var ctx = document.getElementById('myChart');
-  var myPieChart = new Chart(ctx, {
-  type: 'pie',
-  data:this.dataSource,
-}
-);
-
-}
 
 }

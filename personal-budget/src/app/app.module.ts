@@ -28,6 +28,7 @@ import { ChartsComponent } from './components/charts/charts.component';
 import { BargraphComponent } from './components/bargraph/bargraph.component';
 import { ChartmenuComponent } from './components/chartmenu/chartmenu.component';
 import { UpdateamountComponent } from './components/updateamount/updateamount.component';
+import { BarchartComponent } from './components/barchart/barchart.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { UpdateamountComponent } from './components/updateamount/updateamount.co
     BargraphComponent,
     ChartmenuComponent,
     UpdateamountComponent,
+    BarchartComponent,
 
   ],
   imports: [

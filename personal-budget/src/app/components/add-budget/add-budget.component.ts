@@ -54,10 +54,14 @@ export class CreateBudgetComponent implements OnInit {
         Validators.required,
         Validators.minLength(10),
       ]),
+      amount: new FormControl('', [
+        Validators.required,
+
+      ]),
     });
   }
 
-  onSubmit(formData: Pick<UserBudget, 'title' | 'value' | 'month' | 'tags'>): void {
+  onSubmit(formData: Pick<UserBudget, 'title' | 'value' | 'month' | 'tags'| 'amount'>): void {
     this.budgetService
       .addBudgets(formData, this.authService.userId)
       .pipe(first())

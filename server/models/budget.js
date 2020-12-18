@@ -19,16 +19,13 @@ module.exports = class Budget {
     return db.execute('SELECT * FROM budget WHERE user_id = ?',[uid]);
               
   }
-  static update(id,amount)  {
-    return db.execute(
-      'UPDATE  budget SET amount= ? WHERE id= ?',[amount,id]);
-  }
+  
   
   
   static save(budget) {
     return db.execute(
-      'INSERT INTO budget (user_id,title, budget, month,tags) VALUES (?, ?, ?, ?, ?)',
-      [budget.userId,budget.title, budget.value, budget.month,budget.tags]
+      'INSERT INTO budget (user_id,title, budget, month,tags,amount) VALUES (?, ?,?, ?, ?, ?)',
+      [budget.userId,budget.title, budget.value, budget.month,budget.tags,budget.amount]
     );
   }
 

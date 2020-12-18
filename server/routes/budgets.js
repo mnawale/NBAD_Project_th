@@ -11,7 +11,7 @@ const router = express.Router();
 
 router.get('/', auth, budgetsController.fetchAll);
 router.get('/getBudget/:id',budgetsController.fetchBudget);
-router.put('/update',budgetsController.putBudget);
+
 
 router.post(
   '/',
